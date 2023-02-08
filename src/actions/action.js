@@ -10,6 +10,7 @@ export const dataList = (obj) => {
 }
 
 export const searchList = (obj) => {
+    console.log(obj,'obj')
     return {
         type : SEARCH,
         data : obj
@@ -24,10 +25,10 @@ export const addMenu = (obj) => {
         type : ADD,
         data : {
             idx: id++,
-            menu_price: obj.menu_price,
             menu_count: obj.menu_count,
-            pay_date: obj.pay_date,
             menu_name: obj.menu_name,
+            menu_price: obj.menu_price,
+            pay_date: obj.pay_date,
         } 
     }
 }

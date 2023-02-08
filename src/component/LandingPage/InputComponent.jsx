@@ -8,24 +8,28 @@ function InputComponent () {
 
     const [search,setSearch] = useState("");
     const initDataList = useSelector(state => state.reducers)
-
     const onChangeSearchVal = (e) => {
         e.preventDefault();
         setSearch(e.target.value);
-        console.log(search,'serac')
+        console.log('다시',search)
     }
 
-    useEffect(() => {
+        // useEffect(() => {
 
-    },[initDataList])    
+        // },[initDataList])    
 
     const onSearch = (e) => {
         e.preventDefault();
         if(search === null || search === ' '){
             alert('검색할 값을 입력하세요')
         } else{
-            const searchVal = initDataList.filter((menu) => menu.menu_name.includes(search))
-            dispatch(searchList(searchVal));
+           
+            console.log(initDataList,'여기까지는 온다고 여기서 ')
+            // let searchVal = initDataList.filter((menu) => menu.menu_name.includes(search))
+            // dispatch(searchList(searchVal));
+            dispatch(searchList(search));
+
+
         }
     }
 

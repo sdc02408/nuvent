@@ -5,12 +5,12 @@ import InputComponent from './InputComponent';
 import TableComopnent from './TableComopnent';
 
 function LandingPage() {
-    const dispatch = useDispatch();
-    const initDataList = useSelector(state => state.reducers.initialState)
-    useEffect(() => {
-        dispatch(dataList());
-    },[])
-      console.log(initDataList,'initDataList')
+    // const dispatch = useDispatch();
+    // const initDataList = useSelector(state => state.reducers.initialState)
+    // useEffect(() => {
+    //     dispatch(dataList());
+    // },[initDataList])
+    //   console.log(initDataList,'initDataList')
       return (
         <div>
             <div>랜딩페이지</div>

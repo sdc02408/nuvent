@@ -11,15 +11,15 @@ function TableComopnent() {
 
     const initDataList = useSelector(state => state.reducers)
 
-    useEffect(() => {
-         //전체 데이터 호출
-        dispatch(dataList());   
-        console.log(initDataList,'테이블')
+    // useEffect(() => {
+    //      //전체 데이터 호출
+    //     // dispatch(dataList());   
+    //     console.log(initDataList,'테이블')
 
-    },[])
+    // },[initDataList])
 
-    useEffect(() => {
-    },[initDataList])
+    // useEffect(() => {
+    // },[initDataList])
     return (
         <div>
             테이블 컴포넌트

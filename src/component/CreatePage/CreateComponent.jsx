@@ -28,7 +28,6 @@ function CreateComponent() {
         console.log('클릭', inputs)
         dispatch(addMenu(inputs));   
         navigate('/');
-
     }
 
     return (
