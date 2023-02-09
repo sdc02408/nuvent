@@ -1,5 +1,14 @@
+.center{
+    text-align: center;
+}
+.inputDiv{
+    display: flex;
+    justify-content: space-between;
+ 
+}
 .table{
-    border: 1px solid black
+    border: 1px solid black;
+    margin: 20px auto !important;
 }
 
 .table th, td{
@@ -10,3 +19,12 @@
     background: skyblue;
    
   }
+
+.contentWidth{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.mr10{
+    margin-right: 10px;
+}

@@ -3,7 +3,7 @@ function Pagination({ total, limit, page, setPage }) {
   
     return (
       <>
-        <nav>
+        <nav className="contentWidth">
           <button onClick={() => setPage(page - 1)} disabled={page === 1}>
             &lt;
           </button>

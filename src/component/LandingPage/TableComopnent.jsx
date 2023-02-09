@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { dataList } from "../../actions/action";
+import { Link } from "react-router-dom";
+import { deleteMenu } from "../../actions/action";
 import Pagination from "./Pagination";
 
 function TableComopnent() { 
@@ -9,21 +10,17 @@ function TableComopnent() {
     const [page, setPage] = useState(1);
     const offset = (page - 1) * limit;
 
+    //전체 메뉴
     const initDataList = useSelector(state => state.reducers)
 
-    // useEffect(() => {
-    //      //전체 데이터 호출
-    //     // dispatch(dataList());   
-    //     console.log(initDataList,'테이블')
+    //메뉴 삭제
+    const onDeleteMenu = (idx) => {
+        dispatch(deleteMenu(idx))
+    }
 
-    // },[initDataList])
-
-    // useEffect(() => {
-    // },[initDataList])
     return (
         <div>
-            테이블 컴포넌트
-            <table className="table">
+            <table className="table contentWidth">
              <thead>
                 <tr>
                 <th>ID</th>
@@ -31,6 +28,7 @@ function TableComopnent() {
                 <th>가격</th>
                 <th>수량</th>
                 <th>날짜</th>
+                <th>수정</th>
                 <th>삭제</th>
                 </tr>
             </thead>
@@ -43,7 +41,8 @@ function TableComopnent() {
                             <td>{data.menu_price}</td>
                             <td>{data.menu_count}</td>
                             <td>{data.pay_date}</td>
-                            <td><button>삭제</button></td>
+                            <td><Link to='/create' state={{ data: data }}>수정</Link></td>
+                            <td><button onClick={()=> onDeleteMenu(data.idx)}>삭제</button></td>
                            </tr>
                         )) 
                     }
@@ -58,7 +57,6 @@ function TableComopnent() {
                         setPage={setPage}
                     />
             }   
-
 
         </div>
     )
